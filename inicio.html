@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colégio Regente Feijó</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+.hero-section {
+background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+background-size: cover;
+background-position: center;
+}
+
+.course-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link:hover {
+color: #3b82f6;
+}
+
+@media (max-width: 640px) {
+.logo-text {
+font-size: 1.5rem;
+}
+}
+</style>
+</head>
+<body class="font-sans bg-gray-50">
+<!-- Header -->
+<header class="bg-white shadow-md sticky top-0 z-50">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<div class="flex items-center space-x-2">
+<div class="bg-blue-600 text-white font-bold rounded-lg p-2">
+CERF
+</div>
+<h1 class="text-xl md:text-2xl font-bold text-blue-800 logo-text">COLÉGIO REGENTE FEIJÓ</h1>
+</div>
+
+<nav class="hidden md:flex space-x-8">
+<a href="#" class="text-gray-700 font-medium hover:text-blue-600 nav-link">Área do Aluno</a>
+<a href="#" class="text-gray-700 font-medium hover:text-blue-600 nav-link">A Escola</a>
+<a href="#" class="text-gray-700 font-medium hover:text-blue-600 nav-link">Cursos</a>
+<a href="#" class="text-gray-700 font-medium hover:text-blue-600 nav-link">Notícias</a>
+<a href="#" class="text-gray-700 font-medium hover:text-blue-600 nav-link">Contato</a>
+</nav>
+
+<button class="md:hidden text-gray-700">
+<i class="fas fa-bars text-2xl"></i>
+</button>
+</div>
+
+<!-- Mobile menu -->
+<div class="md:hidden bg-white py-2 px-4 shadow-lg hidden" id="mobileMenu">
+<a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Área do Aluno</a>
+<a href="#" class="block py-2 text-gray-700 hover:text-blue-600">A Escola</a>
+<a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Cursos</a>
+<a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Notícias</a>
+<a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Contato</a>
+</div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero-section text-white py-20 md:py-32">
+<div class="container mx-auto px-4 text-center">
+<h1 class="text-4xl md:text-5xl font-bold mb-6">Educação de Excelência</h1>
+<p class="text-xl mb-8 max-w-2xl mx-auto">Formando cidadãos para o futuro com valores e conhecimento.</p>
+<button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+Saiba Mais <i class="fas fa-arrow-right ml-2"></i>
+</button>
+</div>
+</section>
+
+<!-- Main Content -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="max-w-4xl mx-auto text-center">
+<p class="text-gray-700 text-lg mb-8">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</p>
+<p class="text-gray-700 text-lg">
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+</p>
+</div>
+</div>
+</section>
+
+<!-- Courses Section -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center text-blue-800 mb-12">NOSSOS CURSOS:</h2>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Course 1 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden course-card transition duration-300">
+<div class="bg-blue-600 p-4 text-white">
+<i class="fas fa-briefcase text-4xl mb-4"></i>
+<h3 class="text-xl font-bold">Administração</h3>
+</div>
+<div class="p-6">
+<p class="text-gray-700 mb-4">Formação completa em gestão empresarial e administração de negócios.</p>
+<button class="text-blue-600 font-medium hover:text-blue-800">Ver detalhes <i class="fas fa-chevron-right ml-1"></i></button>
+</div>
+</div>
+
+<!-- Course 2 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden course-card transition duration-300">
+<div class="bg-blue-600 p-4 text-white">
+<i class="fas fa-tractor text-4xl mb-4"></i>
+<h3 class="text-xl font-bold">Agronegócio</h3>
+</div>
+<div class="p-6">
+<p class="text-gray-700 mb-4">Especialização em gestão e tecnologia aplicada ao agronegócio.</p>
+<button class="text-blue-600 font-medium hover:text-blue-800">Ver detalhes <i class="fas fa-chevron-right ml-1"></i></button>
+</div>
+</div>
+
+<!-- Course 3 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden course-card transition duration-300">
+<div class="bg-blue-600 p-4 text-white">
+<i class="fas fa-code text-4xl mb-4"></i>
+<h3 class="text-xl font-bold">Desenvolvimento</h3>
+</div>
+<div class="p-6">
+<p class="text-gray-700 mb-4">Formação em desenvolvimento de sistemas e programação.</p>
+<button class="text-blue-600 font-medium hover:text-blue-800">Ver detalhes <i class="fas fa-chevron-right ml-1"></i></button>
+</div>
+</div>
+
+<!-- Course 4 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden course-card transition duration-300">
+<div class="bg-blue-600 p-4 text-white">
+<i class="fas fa-hotel text-4xl mb-4"></i>
+<h3 class="text-xl font-bold">Hospedagem</h3>
+</div>
+<div class="p-6">
+<p class="text-gray-700 mb-4">Curso completo em hotelaria e gestão de hospedagem.</p>
+<button class="text-blue-600 font-medium hover:text-blue-800">Ver detalhes <i class="fas fa-chevron-right ml-1"></i></button>
+</div>
+</div>
+
+<!-- Course 5 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden course-card transition duration-300">
+<div class="bg-blue-600 p-4 text-white">
+<i class="fas fa-bullhorn text-4xl mb-4"></i>
+<h3 class="text-xl font-bold">Marketing</h3>
+</div>
+<div class="p-6">
+<p class="text-gray-700 mb-4">Formação em marketing digital e estratégias de mercado.</p>
+<button class="text-blue-600 font-medium hover:text-blue-800">Ver detalhes <i class="fas fa-chevron-right ml-1"></i></button>
+</div>
+</div>
+
+<!-- Course 6 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden course-card transition duration-300">
+<div class="bg-blue-600 p-4 text-white">
+<i class="fas fa-chart-line text-4xl mb-4"></i>
+<h3 class="text-xl font-bold">Planejamento</h3>
+</div>
+<div class="p-6">
+<p class="text-gray-700 mb-4">Especialização em planejamento estratégico e gestão de projetos.</p>
+<button class="text-blue-600 font-medium hover:text-blue-800">Ver detalhes <i class="fas fa-chevron-right ml-1"></i></button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- News Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center text-blue-800 mb-12">ÚLTIMAS NOTÍCIAS</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- News 1 -->
+<div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition duration-300">
+<img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="News image" class="w-full h-48 object-cover">
+<div class="p-6">
+<span class="text-sm text-blue-600">15/06/2023</span>
+<h3 class="text-xl font-bold my-2">Formatura 2023</h3>
+<p class="text-gray-700 mb-4">Confira as fotos da emocionante cerimônia de formatura.</p>
+<a href="#" class="text-blue-600 font-medium hover:text-blue-800">Ler mais <i class="fas fa-chevron-right ml-1"></i></a>
+</div>
+</div>
+
+<!-- News 2 -->
+<div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition duration-300">
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="News image" class="w-full h-48 object-cover">
+<div class="p-6">
+<span class="text-sm text-blue-600">10/06/2023</span>
+<h3 class="text-xl font-bold my-2">Olimpíadas Estudantis</h3>
+<p class="text-gray-700 mb-4">Nossos alunos se destacam nas olimpíadas regionais.</p>
+<a href="#" class="text-blue-600 font-medium hover:text-blue-800">Ler mais <i class="fas fa-chevron-right ml-1"></i></a>
+</div>
+</div>
+
+<!-- News 3 -->
+<div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition duration-300">
+<img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="News image" class="w-full h-48 object-cover">
+<div class="p-6">
+<span class="text-sm text-blue-600">05/06/2023</span>
+<h3 class="text-xl font-bold my-2">Novo Laboratório</h3>
+<p class="text-gray-700 mb-4">Inauguramos nosso moderno laboratório de ciências.</p>
+<a href="#" class="text-blue-600 font-medium hover:text-blue-800">Ler mais <i class="fas fa-chevron-right ml-1"></i></a>
+</div>
+</div>
+</div>
+
+<div class="text-center mt-12">
+<button class="border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-bold py-2 px-6 rounded-full transition duration-300">
+Ver todas as notícias
+</button>
+</div>
+</div>
+</section>
+
+<!-- Contact CTA -->
+<section class="py-16 bg-blue-600 text-white">
+<div class="container mx-auto px-4 text-center">
+<h2 class="text-3xl font-bold mb-6">Entre em contato conosco</h2>
+<p class="text-xl mb-8 max-w-2xl mx-auto">Tem dúvidas ou quer saber mais sobre nossos cursos? Nossa equipe está pronta para ajudar.</p>
+<button class="bg-white text-blue-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+Fale Conosco <i class="fas fa-envelope ml-2"></i>
+</button>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-12">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div>
+<h3 class="text-xl font-bold mb-4">Colégio Regente Feijó</h3>
+<p class="text-gray-400">Educação de qualidade formando cidadãos para o futuro.</p>
+</div>
+
+<div>
+<h3 class="text-xl font-bold mb-4">Contato</h3>
+<ul class="space-y-2">
+<li class="flex items-center">
+<i class="fas fa-map-marker-alt mr-2 text-blue-400"></i>
+<span>Rua Exemplo, 123 - Centro</span>
+</li>
+<li class="flex items-center">
+<i class="fas fa-phone mr-2 text-blue-400"></i>
+<span>(11) 1234-5678</span>
+</li>
+<li class="flex items-center">
+<i class="fas fa-envelope mr-2 text-blue-400"></i>
+<span>contato@regentefeijo.com.br</span>
+</li>
+</ul>
+</div>
+
+<div>
+<h3 class="text-xl font-bold mb-4">Links Rápidos</h3>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-white">Área do Aluno</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Calendário Escolar</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Documentos</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Trabalhe Conosco</a></li>
+</ul>
+</div>
+
+<div>
+<h3 class="text-xl font-bold mb-4">Redes Sociais</h3>
+<div class="flex space-x-4">
+<a href="#" class="bg-blue-600 hover:bg-blue-700 w-10 h-10 rounded-full flex items-center justify-center">
+<i class="fab fa-facebook-f"></i>
+</a>
+<a href="#" class="bg-blue-400 hover:bg-blue-500 w-10 h-10 rounded-full flex items-center justify-center">
+<i class="fab fa-twitter"></i>
+</a>
+<a href="#" class="bg-pink-600 hover:bg-pink-700 w-10 h-10 rounded-full flex items-center justify-center">
+<i class="fab fa-instagram"></i>
+</a>
+<a href="#" class="bg-red-600 hover:bg-red-700 w-10 h-10 rounded-full flex items-center justify-center">
+<i class="fab fa-youtube"></i>
+</a>
+</div>
+</div>
+</div>
+
+<div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+<p>&copy; 2023 Colégio Regente Feijó. Todos os direitos reservados.</p>
+</div>
+</div>
+</footer>
+
+<script>
+// Mobile menu toggle
+document.querySelector('button.md\\:hidden').addEventListener('click', function() {
+const menu = document.getElementById('mobileMenu');
+menu.classList.toggle('hidden');
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+
+document.querySelector(this.getAttribute('href')).scrollIntoView({
+behavior: 'smooth'
+});
+});
+});
+</script>
+</body>
+</html>
