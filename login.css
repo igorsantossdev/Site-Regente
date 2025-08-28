@@ -1,0 +1,38 @@
+
+{
+  background-color: #AA0000;
+  color: #111827;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.login-card {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.input-field {
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+  }
+}
+
+.login-btn {
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+}
+
+
