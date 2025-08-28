@@ -1,194 +1,606 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colégio Regente Feijó</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container header-container">
-            <div class="logo-container">
-                <div class="logo">
-                    <img src="fotos/logo regente.png" alt="Logo Colégio Regente Feijó">
-                </div>
-            </div>
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-            <nav class="desktop-nav">
-                <a href="#" class="nav-link">Área do Aluno</a>
-                <a href="#" class="nav-link">A Escola</a>
-                <a href="#" class="nav-link">Cursos</a>
-                <a href="#" class="nav-link">Notícias</a>
-                <a href="#" class="nav-link">Contato</a>
-            </nav>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9fafb;
+    color: #374151;
+    line-height: 1.6;
+}
 
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
 
-        <!-- Mobile menu -->
-        <div class="mobile-menu" id="mobileMenu">
-            <a href="#" class="mobile-nav-link">Área do Aluno</a>
-            <a href="#" class="mobile-nav-link">A Escola</a>
-            <a href="#" class="mobile-nav-link">Cursos</a>
-            <a href="#" class="mobile-nav-link">Notícias</a>
-            <a href="#" class="mobile-nav-link">Contato</a>
-        </div>
-    </header>
+/* Header */
+.header {
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container hero-container">
-            <h1 class="hero-subtitle"> COLÉGIO</h1>
-            <div class="cu"><img src="fotos/regente feijo.png" alt="" class="hero-image"></div>
-            <button class="cta-button">
-                Saiba Mais <i class="fas fa-arrow-right"></i>
-            </button>
-        </div>
-    </section>
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+}
 
-    <!-- Main Content -->
-    <section class="main-content">
-        <div class="container">
-            <div class="content-wrapper">
-                <p class="content-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-                <p class="content-text">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </p>
-            </div>
-        </div>
-    </section>
+.logo-container {
+    display: flex;
+    align-items: center;
+}
 
-    <!-- Courses Section -->
-    <div class="cursos">
-    <div class="curso">
-      <img src="fotos/mala.png " alt="Administração">
-      <p>Administração</p>
-    </div>
-    <div class="curso">
-      <img src="icone2.png" alt="Agronegócio">
-      <p>Agronegócio</p>
-    </div>
-    <div class="curso">
-      <img src="icone3.png" alt="Desenvolvimento de Sistemas">
-      <p>Desenvolvimento de Sistemas</p>
-    </div>
-    <div class="curso">
-      <img src="icone4.png" alt="Hospedagem">
-      <p>Hospedagem</p>
-    </div>
-    <div class="curso">
-      <img src="icone5.png" alt="Marketing">
-      <p>Marketing</p>
-    </div>
-    <div class="curso">
-      <img src="icone6.png" alt="Planejamento e Controle da Produção">
-      <p>Planejamento e Controle da Produção</p>
-    </div>
-  </div>
+.logo img {
+    height: 40px;
+}
 
-  
+.desktop-nav {
+    display: none;
+}
 
-    <!-- News Section -->
+.nav-link {
+    color: #374151;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s;
+}
 
+.nav-link:hover {
+    color: #2563eb;
+}
 
-    <!-- Contact CTA -->
-    <section class="contact-section">
-        <div class="container">
-            <div class="contact-content">
-                <h2 class="contact-title">Entre em contato conosco</h2>
-                <p class="contact-description">Tem dúvidas ou quer saber mais sobre nossos cursos? Nossa equipe está pronta para ajudar.</p>
-                <button class="inverse-button">
-                    Fale Conosco <i class="fas fa-envelope"></i>
-                </button>
-            </div>
-        </div>
-    </section>
+.mobile-menu-btn {
+    background: none;
+    border: none;
+    color: #374151;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3 class="footer-title">Colégio Regente Feijó</h3>
-                    <p class="footer-text">Educação de qualidade formando cidadãos para o futuro.</p>
-                </div>
+.mobile-menu {
+    display: none;
+    background-color: white;
+    padding: 8px 16px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
 
-                <div class="footer-col">
-                    <h3 class="footer-title">Contato</h3>
-                    <ul class="footer-list">
-                        <li class="footer-item">
-                            <i class="fas fa-map-marker-alt footer-icon"></i>
-                            <span>Rua Exemplo, 123 - Centro</span>
-                        </li>
-                        <li class="footer-item">
-                            <i class="fas fa-phone footer-icon"></i>
-                            <span>(11) 1234-5678</span>
-                        </li>
-                        <li class="footer-item">
-                            <i class="fas fa-envelope footer-icon"></i>
-                            <span>contato@regentefeijo.com.br</span>
-                        </li>
-                    </ul>
-                </div>
+.mobile-menu.active {
+    display: block;
+}
 
-                <div class="footer-col">
-                    <h3 class="footer-title">Links Rápidos</h3>
-                    <ul class="footer-links">
-                        <li><a href="#" class="footer-link">Área do Aluno</a></li>
-                        <li><a href="#" class="footer-link">Calendário Escolar</a></li>
-                        <li><a href="#" class="footer-link">Documentos</a></li>
-                        <li><a href="#" class="footer-link">Trabalhe Conosco</a></li>
-                    </ul>
-                </div>
+.mobile-nav-link {
+    display: block;
+    padding: 8px 0;
+    color: #374151;
+    text-decoration: none;
+    transition: color 0.3s;
+}
 
-                <div class="footer-col">
-                    <h3 class="footer-title">Redes Sociais</h3>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-icon twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-icon instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="social-icon youtube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+.mobile-nav-link:hover {
+    color: #2563eb;
+}
 
-            <div class="footer-bottom">
-                <p>&copy; 2023 Colégio Regente Feijó. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
 
-    <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('active');
-        });
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+.hero-title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 32px;
+    max-width: 32rem;
+}
+
+.cta-button {
+    background-color: #2563eb;
+    color: white;
+    font-weight: bold;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cta-button:hover {
+    background-color: #1d4ed8;
+    transform: scale(1.05);
+}
+
+/* Main Content */
+.main-content {
+    background-color: white;
+    padding: 64px 0;
+}
+
+.content-wrapper {
+    max-width: 56rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.content-text {
+    color: #374151;
+    font-size: 1.125rem;
+    margin-bottom: 32px;
+}
+
+/* Courses Section */
+.courses-section {
+    background-color: #f9fafb;
+    padding: 64px 0;
+}
+
+.section-title {
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: #1e40af;
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+}
+
+.course-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.course-header {
+    background-color: #2563eb;
+    padding: 16px;
+    color: white;
+    text-align: center;
+}
+
+.course-icon {
+    font-size: 2.25rem;
+    margin-bottom: 16px;
+}
+
+.course-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.course-body {
+    padding: 24px;
+}
+
+.course-description {
+    color: #374151;
+    margin-bottom: 16px;
+}
+
+.course-btn {
+    color: #2563eb;
+    font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.3s;
+}
+
+.course-btn:hover {
+    color: #1e40af;
+}
+
+/* Info Section */
+.info-section {
+    background-color: white;
+    padding: 64px 0;
+}
+
+.info-wrapper {
+    max-width: 56rem;
+    margin: 0 auto;
+}
+
+.info-box {
+    background-color: #dbeafe;
+    padding: 32px;
+    border-radius: 0.5rem;
+}
+
+.info-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1e40af;
+    margin-bottom: 16px;
+}
+
+.info-list {
+    list-style: none;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.checkmark {
+    background-color: #2563eb;
+    color: white;
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+/* News Section */
+.news-section {
+    background-color: #f9fafb;
+    padding: 64px 0;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 48px;
+}
+
+.news-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.news-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.news-image {
+    width: 100%;
+    height: 192px;
+    object-fit: cover;
+}
+
+.news-body {
+    padding: 24px;
+}
+
+.news-date {
+    font-size: 0.875rem;
+    color: #2563eb;
+}
+
+.news-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 8px 0;
+}
+
+.news-description {
+    color: #374151;
+    margin-bottom: 16px;
+}
+
+.news-link {
+    color: #2563eb;
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.3s;
+}
+
+.news-link:hover {
+    color: #1e40af;
+}
+
+.news-button-container {
+    text-align: center;
+}
+
+.outline-button {
+    border: 1px solid #2563eb;
+    color: #2563eb;
+    background: none;
+    font-weight: bold;
+    padding: 8px 24px;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.outline-button:hover {
+    background-color: #2563eb;
+    color: white;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: #2563eb;
+    color: white;
+    padding: 64px 0;
+    text-align: center;
+}
+
+.contact-content {
+    max-width: 42rem;
+    margin: 0 auto;
+}
+
+.contact-title {
+    font-size: 1.875rem;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+.contact-description {
+    font-size: 1.25rem;
+    margin-bottom: 32px;
+}
+
+.inverse-button {
+    background-color: white;
+    color: #2563eb;
+    font-weight: bold;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 auto;
+}
+
+.inverse-button:hover {
+    background-color: #f3f4f6;
+    transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+    background-color: #1f2937;
+    color: white;
+    padding: 48px 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 32px;
+}
+
+.footer-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.footer-text {
+    color: #9ca3af;
+}
+
+.footer-list {
+    list-style: none;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.footer-icon {
+    color: #93c5fd;
+    margin-right: 8px;
+    width: 16px;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-link {
+    color: #9ca3af;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    color: white;
+}
+
+.social-icons {
+    display: flex;
+    gap: 16px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.social-icon:hover {
+    opacity: 0.9;
+}
+
+.facebook {
+    background-color: #2563eb;
+}
+
+.twitter {
+    background-color: #0ea5e9;
+}
+
+.instagram {
+    background-color: #db2777;
+}
+
+.youtube {
+    background-color: #dc2626;
+}
+
+.footer-bottom {
+    border-top: 1px solid #374151;
+    padding-top: 32px;
+    text-align: center;
+    color: #9ca3af;
+}
+
+/* Media Queries */
+@media (min-width: 640px) {
+    .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .desktop-nav {
+        display: flex;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 40px;
+    }
+    
+    .mobile-menu-btn {
+        display: none;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .courses-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .news-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-section {
+        padding: 128px 0;
+    }
+}
+.cursos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.curso {
+  background-color: #000080; /* azul escuro */
+  color: white;
+  border-radius: 20px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.curso img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.curso p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .cursos {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .cursos {
+    grid-template-columns: 1fr;
+  }
+}
