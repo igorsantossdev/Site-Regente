@@ -45,12 +45,23 @@ class CorrectDeployer {
     async sendData() {
         console.log('📦 Preparando dados para envio...');
         
+        // Primeiro lista posts existentes para ver os IDs
+        await this.listPosts();
+        
+        // Depois envia usuários (agora com campos em INGLÊS)
         await this.sendUsers();
         
-        // Envia posts para api/posts
+        // Envia posts
         await this.sendPosts();
 
-        await this.deletarpost();
+        // Lista posts novamente para ver os novos
+        await this.listPosts();
+        
+        // Deleta um post (vamos tentar deletar o post com ID 1)
+        await this.deletarPost(1);
+        
+        // Lista posts final para confirmar deleção
+        await this.listPosts();
         
         console.log('🎯 Deploy de dados concluído!');
     }
@@ -60,16 +71,10 @@ class CorrectDeployer {
         
         const users = [
             {
-                nome: "Henrique",
-                email: "henrique@gmail.com",
-                senha: "henrique123",
-                confirmacao_senha: "henrique123"
-            },
-            {
-                nome: "Amigo", 
-                email: "amigo@gmail.com",
-                senha: "amigo123",
-                confirmacao_senha: "amigo123"
+                name: "outro user",
+                email: "outro.user@gmail.com",
+                password: "outro.user123",
+                password_confirmation: "outro.user123"
             }
         ];
 
@@ -89,6 +94,18 @@ class CorrectDeployer {
                 console.log('Resposta:', response.data);
             } catch (error) {
                 console.log(`❌ Erro ao criar usuário ${user.email}:`, error.response?.data || error.message);
+                
+                // Corrigido: verifica se é erro de usuário já existe
+                const errorData = error.response?.data;
+                if (errorData && typeof errorData === 'object') {
+                    if (errorData.message && errorData.message.includes('already exists')) {
+                        console.log('⚠️  Usuário já existe, testando login...');
+                        await this.testLogin(user.email, user.password);
+                    }
+                } else if (error.response?.status === 422) {
+                    console.log('⚠️  Erro de validação, tentando login...');
+                    await this.testLogin(user.email, user.password);
+                }
             }
         }
     }
@@ -98,12 +115,12 @@ class CorrectDeployer {
         
         const posts = [
             {
-                titulo: "Primeiro Post",
-                Conteudo: "Este é o primeiro post do blog!",
+                titulo: "Primeiro Post Teste",
+                Conteudo: "Este é um post de teste para ser deletado!",
                 user_id: 1
             },
             {
-                titulo: "Bem-vindo",
+                titulo: "Post de Boas Vindas",
                 Conteudo: "Seja bem-vindo ao nosso blog!",
                 user_id: 2
             }
@@ -129,12 +146,87 @@ class CorrectDeployer {
         }
     }
 
-    async testLogin() {
-        console.log('🔐 Testando login...');
+    async listPosts() {
+        console.log('📋 Listando todos os posts...');
+        try {
+            const response = await axios.get(`${this.API_URL}/api/posts`, {
+                headers: {
+                    'Accept': 'application/json'
+                },
+                timeout: 10000
+            });
+            
+            console.log('✅ Posts encontrados:');
+            if (response.data && Array.isArray(response.data)) {
+                response.data.forEach((post, index) => {
+                    console.log(`${index + 1}. ID: ${post.id}, Título: ${post.titulo || post.title}`);
+                });
+            } else {
+                console.log('Resposta:', response.data);
+            }
+            return response.data;
+        } catch (error) {
+            console.log('❌ Erro ao listar posts:', error.response?.data || error.message);
+            return null;
+        }
+    }
+
+    async deletarPost(postId) {
+        console.log(`🗑️ Tentando deletar post com ID ${postId}...`);
+        try {
+            const response = await axios.delete(`${this.API_URL}/api/posts/${postId}`, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                timeout: 10000,
+                data: {} // Algumas APIs precisam de um body vazio
+            });
+
+            console.log(`✅ Post com ID ${postId} deletado com sucesso!`);
+            console.log('Resposta:', response.data);
+            return response.data;
+        } catch (error) {
+            console.log(`❌ Erro ao deletar post com ID ${postId}:`, error.response?.data || error.message);
+            
+            // Se não conseguir deletar, tenta atualizar o post
+            console.log('🔄 Tentando atualizar o post em vez de deletar...');
+            await this.atualizarPost(postId, {
+                titulo: "[DELETADO] Post removido",
+                Conteudo: "Este post foi marcado como deletado",
+                user_id: 1
+            });
+            
+            return null;
+        }
+    }
+
+    async atualizarPost(postId, novosDados) {
+        console.log(`✏️ Atualizando post com ID ${postId}...`);
+        try {
+            const response = await axios.put(`${this.API_URL}/api/posts/${postId}`, novosDados, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                timeout: 10000
+            });
+
+            console.log(`✅ Post com ID ${postId} atualizado com sucesso!`);
+            console.log('Resposta:', response.data);
+            return response.data;
+        } catch (error) {
+            console.log(`❌ Erro ao atualizar post com ID ${postId}:`, error.response?.data || error.message);
+            return null;
+        }
+    }
+
+    async testLogin(email = 'henrique@gmail.com', password = 'henrique123') {
+        console.log(`🔐 Testando login com ${email}...`);
         try {
             const response = await axios.post(`${this.API_URL}/api/login`, {
-                email: 'henrique@gmail.com',
-                password: 'henrique123'
+                email: email,
+                password: password
             }, {
                 headers: {
                     'Content-Type': 'application/json'
@@ -153,24 +245,6 @@ class CorrectDeployer {
         } catch (error) {
             console.log('❌ Login falhou:', error.response?.data || error.message);
             return null;
-        }
-    }
-    async deletarpost(){
-        console.log('🗑️ Deletando post com id 1...');
-        try{
-            const response = await axios.delete(`${this.API_URL}/api/posts/1`, {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                    'Authorization': `Bearer ${this.token}`
-                },
-                timeout: 10000
-            });
-
-            console.log(`✅ Post com id 1 deletado com sucesso!`);
-            console.log('Resposta:', response.data);
-        } catch (error) {
-            console.log(`❌ Erro ao deletar post com id 1:`, error.response?.data || error.message);
         }
     }
 }
@@ -193,7 +267,7 @@ async function executeDeploy() {
     
     // Testa o login após o deploy
     console.log('\n🔐 Testando login após deploy...');
-    await deployer.testLogin();
+    await deployer.testLogin('outro.user@gmail.com', 'outro.user123');
     
     console.log('\n📞 DEPLOY CONCLUÍDO!');
 }
