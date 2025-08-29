@@ -45,7 +45,10 @@ class CorrectDeployer {
     async sendData() {
         console.log('📦 Preparando dados para envio...');
         
-       
+        await this.sendUsers();
+        
+        // Envia posts para api/posts
+        await this.sendPosts();
 
         await this.deletarpost();
         
