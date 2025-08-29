@@ -92,16 +92,17 @@ body {
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-image: url(fotos/regenteescola.jpg);
+    
     background-size: cover;
     background-position: center;
     color: white;
-    padding: 80px 0;
+    padding: 10px 0;
     text-align: center;
 }
 
 .hero-container {
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -120,7 +121,7 @@ body {
 }
 
 .cta-button {
-    background-color: #2563eb;
+    background-color: #000080;
     color: white;
     font-weight: bold;
     padding: 12px 32px;
@@ -134,7 +135,7 @@ body {
 }
 
 .cta-button:hover {
-    background-color: #1d4ed8;
+    background-color: #000080;
     transform: scale(1.05);
 }
 
@@ -359,13 +360,13 @@ body {
 }
 
 .outline-button:hover {
-    background-color: #2563eb;
-    color: white;
+    background-color: white;
+    color: blue;
 }
 
 /* Contact Section */
 .contact-section {
-    background-color: #2563eb;
+    background-color: red;
     color: white;
     padding: 64px 0;
     text-align: center;
@@ -388,8 +389,8 @@ body {
 }
 
 .inverse-button {
-    background-color: white;
-    color: #2563eb;
+    background-color: #000080;
+    color: white;
     font-weight: bold;
     padding: 12px 32px;
     border: none;
@@ -403,7 +404,7 @@ body {
 }
 
 .inverse-button:hover {
-    background-color: #f3f4f6;
+    background-color: #000080;
     transform: scale(1.05);
 }
 
@@ -504,7 +505,7 @@ body {
     border-top: 1px solid #374151;
     padding-top: 32px;
     text-align: center;
-    color: #9ca3af;
+    color: #000080;
 }
 
 /* Media Queries */
@@ -603,4 +604,19 @@ body {
   .cursos {
     grid-template-columns: 1fr;
   }
+}
+.coisa {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.user-icon {
+    margin-left: 10px;  /* distância do último link */
+    font-size: 1.5rem;  /* aumenta o tamanho do ícone */
+    color: #374151;     /* cor padrão */
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.user-icon:hover {
+    color: #2563eb; /* cor azul no hover */
 }
