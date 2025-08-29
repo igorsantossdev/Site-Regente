@@ -562,6 +562,16 @@ body {
         padding: 128px 0;
     }
 }
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.logo img {
+  height: auto;
+  max-height: 50px; /* limita a altura no desktop */
+}
+
 .cursos {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -619,4 +629,22 @@ body {
 
 .user-icon:hover {
     color: #2563eb; /* cor azul no hover */
+}
+.hero-image {
+  max-width: 90%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Imagens da seção cursos */
+.curso img {
+  width: 50px;
+  max-width: 80%;   /* evita quebrar no mobile */
+  height: auto;
+}
+
+/* Imagem do bloco "coisa" */
+.coisa img {
+  max-width: 100%;
+  height: auto;
 }
