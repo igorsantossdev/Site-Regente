@@ -10,28 +10,46 @@
 </head>
 <body class="font-sans bg-gray-50">
     <!-- Header -->
-    <header class="bg-white shadow-sm">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <!-- Logo -->
-            <div class="flex items-center">
-                <h1 class="text-3xl font-bold text-blue-600"><a href="inicio.html"><img src="CERF.jpg" alt="CERF Logo"></a></h1>
-            </div>
-            
-            <!-- Navigation Links - Desktop -->
-            <nav class="hidden md:flex space-x-6">
-                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Área do Aluno</a>
-                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">A Escola</a>
-                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Cursos</a>
-                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Notícias</a>
-                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Contato</a>
-            </nav>
-            
-            <!-- Mobile Menu Button -->
-            <button class="md:hidden text-blue-600">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
-        </div>
-    </header>
+   <header class="header">
+  <div class="container header-container">
+    <div class="logo-container">
+      <div class="logo">
+        <a href="inicio.html"><img src="CERF.jpg" alt="Logo Colégio Regente Feijó"></a>
+      </div>
+    </div>
+
+    <!-- Menu Desktop -->
+    <nav class="desktop-nav hidden md:flex">
+      <a href="#" class="nav-link">Área do Aluno</a>
+      <a href="#" class="nav-link">A Escola</a>
+      <a href="#" class="nav-link">Cursos</a>
+      <a href="#" class="nav-link">Notícias</a>
+      <a href="#" class="nav-link">Contato</a>
+    </nav>
+
+    <!-- Ícone de usuário -->
+    <div class="user-icon hidden md:block">
+      <a href="login.html" class="text-blue-600 hover:text-blue-800">
+        <i class="fas fa-user-circle text-2xl"></i>
+      </a>
+    </div>
+
+    <!-- Botão Mobile -->
+    <button class="mobile-menu-btn md:hidden">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Menu Mobile -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#" class="mobile-nav-link">Área do Aluno</a>
+    <a href="#" class="mobile-nav-link">A Escola</a>
+    <a href="#" class="mobile-nav-link">Cursos</a>
+    <a href="#" class="mobile-nav-link">Notícias</a>
+    <a href="#" class="mobile-nav-link">Contato</a>
+    <a href="login.html" class="mobile-nav-link">Login</a>
+  </div>
+</header>
 
     <!-- Main Content -->
     <main class="min-h-screen bg-red-600 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
